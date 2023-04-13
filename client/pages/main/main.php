@@ -9,32 +9,35 @@
 <body>
   <?php require('navbar/navbar.inc.php') ?>
 
-  <form action="process-form.php" method="post">
+  <div class="d-flex">
 
-    <p>
-      <label for="inputName">Name:<sup>*</sup></label>
-      <input type="text" name="nome" id="inputName">
-    </p>
+    <div class="card" style="width: 18rem;">
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <div class="card-body">
+        <h5 class="card-title">Quiz 1</h5>
+        <p class="card-text">Details</p>
+        <a href="quiz?id=1" class="stretched-link"></a>
+      </div>
+    </div>
 
-    <p>
-      <label for="inputEmail">Email:<sup>*</sup></label>
-      <input type="text" name="email" id="inputEmail">
-    </p>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Quiz 2</h5>
+        <p class="card-text">Details</p>
+        <a href="quiz?id=2" class="stretched-link"></a>
+      </div>
+    </div>
 
-    <p>
-      <label for="inputSubject">Subject:</label>
-      <input type="text" name="subject" id="inputSubject">
-    </p>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Quiz 3</h5>
+        <p class="card-text">Details</p>
+        <a href="quiz?id=3" class="stretched-link"></a>
+      </div>
+    </div>
 
-    <p>
-      <label for="inputComment">Message:<sup>*</sup></label>
-      <textarea name="message" id="inputComment" rows="5" cols="30"></textarea>
-    </p>
+  </div>
 
-    <input type="submit" value="Submit">
-    <input type="reset" value="Reset">
-
-  </form>
 </body>
 
 </html>

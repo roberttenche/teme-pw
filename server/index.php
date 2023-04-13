@@ -8,9 +8,11 @@ set_include_path(
   ROOT_PATH . '\\client\\common'
 );
 
-$request = $_SERVER['REQUEST_URI'];
+$parsed_uri = parse_url($_SERVER['REQUEST_URI']);
 
-switch ($request) {
+$request_path = $parsed_uri["path"];
+
+switch ($request_path) {
 
 case '' :
 case '/' :
@@ -21,7 +23,23 @@ case '/about' :
   require 'about/about.php';
   break;
 
-case '/process-form.php';
+case '/quiz':
+  if(isset($parsed_uri["query"]))
+  {
+    require 'quiz/quiz.php';
+  }
+  else
+  {
+    http_response_code(404);
+    require '404/404.php';
+  }
+  break;
+
+case '/quiz/create':
+  require 'quiz/create/quiz_create.php';
+  break;
+
+case '/quiz/all':
   require 'process-from.php';
   break;
 
